@@ -7,9 +7,9 @@ const collectEmployees = function () {
   let addEmployee = true;
 
   const employeesArray = {
-    firstName: null,
-    lastName: null,
-    salary: null,
+    firstName: [],
+    lastName: [],
+    salary: [],
   }
   
   while (addEmployee) {
@@ -17,7 +17,7 @@ const collectEmployees = function () {
     if (!firstPrompt) {
       return;
     } else {
-      employeesArray.firstName = firstPrompt;
+      employeesArray.firstName.push(firstPrompt);
     }
   }
 };
