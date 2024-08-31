@@ -13,11 +13,17 @@ const collectEmployees = function () {
   }
   
   while (addEmployee) {
-    let firstPrompt = window.prompt("Enter employee's name");
+    let firstPrompt = window.prompt("Enter employee's first name");
     if (!firstPrompt) {
       return;
     } else {
       employeesArray.firstName.push(firstPrompt);
+    }
+    let lastPrompt = window.prompt("Enter employee's last name");
+    if (!lastPrompt) {
+      return;
+    } else {
+      employeesArray.lastName.push(lastPrompt);
     }
   }
 };
