@@ -4,9 +4,9 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // Collect employee data
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  let employeesArray = true;
+  let addEmployee = true;
 
-  while (employeesArray) {
+  while (addEmployee) {
     let namePrompt = window.prompt("Enter employee's name");
     if (!namePrompt) {
       return;
