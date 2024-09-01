@@ -30,7 +30,8 @@ const collectEmployees = function () {
       return;
     } else {
       employeesArray.salary.push(salaryPrompt);
-    }
+    };
+    addEmployee = window.confirm('Add another employee?');
   }
 };
 
