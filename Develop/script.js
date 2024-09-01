@@ -18,12 +18,18 @@ const collectEmployees = function () {
       return;
     } else {
       employeesArray.firstName.push(firstPrompt);
-    }
+    };
     let lastPrompt = window.prompt("Enter employee's last name");
     if (!lastPrompt) {
       return;
     } else {
       employeesArray.lastName.push(lastPrompt);
+    };
+    let salaryPrompt = window.prompt("Enter employee's salary (numerals only)");
+    if (!salaryPrompt) {
+      return;
+    } else {
+      employeesArray.salary.push(salaryPrompt);
     }
   }
 };
