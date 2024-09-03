@@ -4,53 +4,41 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // Collect employee data
 const collectEmployees = function (employeesArray) {
   // TODO: Get user input to create and return an array of employee objects
-  const employeesArray = {
-    firstName: [],
-    lastName: [],
-    salary: [],
-  }
+  const employeeFLS = []
   let addEmployee = true;
   
   while (addEmployee) {
     let firstPrompt = window.prompt("Enter employee's first name");
-    if (!firstPrompt) {
-      return;
-    } else {
-      employeesArray.firstName.push(firstPrompt);
-    };
     let lastPrompt = window.prompt("Enter employee's last name");
-    if (!lastPrompt) {
-      return;
-    } else {
-      employeesArray.lastName.push(lastPrompt);
-    };
     let salaryPrompt = window.prompt("Enter employee's salary (numerals only)");
-    if (!salaryPrompt) {
-      return;
-    } else {
-      employeesArray.salary.push(salaryPrompt);
-    };
+    const employeeProfile = {
+      firstName: firstPrompt,
+      lastName: lastPrompt,
+      salary: salaryPrompt,
+    }
+    employeeFLS.push(employeeProfile);
     addEmployee = window.confirm('Add another employee?');
   }
+  return employeeFLS;
 };
 
 // Display the average salary
-const displayAverageSalary = function () {
+const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
   let totalSalary = 0;
-  for (let i = 0; i < employeesArray.salary.length; i++ ) {
-    totalSalary += Number(employeesArray.salary[i]);
+  for (let i = 0; i < employeesArray.length; i++ ) {
+    totalSalary += Number(employeesArray[i].salary);
   }
 
-  avgSalary = (totalSalary / employeesArray.salary.length);
+  avgSalary = (totalSalary / employeesArray.length);
   console.log(`The average employee salary is $${avgSalary}.`)
 };
 
 // Select a random employee
-const getRandomEmployee = function () {
+const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
-  const index = Math.floor(Math.random() * employeesArray.firstName.length);
-  console.log(`Congratulations! ${employeesArray.firstName[index]} ${employeesArray.lastName[index]} is the winner!`);
+  const index = Math.floor(Math.random() * employeesArray.length);
+  console.log(`Congratulations! ${employeesArray[index].firstName} ${employeesArray[index].lastName} is the winner!`);
 };
 
 /*
