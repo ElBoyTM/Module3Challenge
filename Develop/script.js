@@ -31,7 +31,7 @@ const displayAverageSalary = function (employeesArray) {
   }
 
   avgSalary = (totalSalary / employeesArray.length);
-  console.log(`The average employee salary is $${avgSalary}.`)
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $<averageSalaryWithTwoDecimals>`)
 };
 
 // Select a random employee
